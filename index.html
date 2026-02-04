@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <p class="app__eyebrow">Organisateur personnel</p>
+        <h1>Ma to-do list</h1>
+        <p class="app__subtitle">Ajoutez, priorisez et cochez vos tâches du jour.</p>
+      </header>
+
+      <section class="app__panel">
+        <form class="task-form" aria-label="Ajouter une tâche">
+          <label class="task-form__label" for="task-input">Nouvelle tâche</label>
+          <div class="task-form__controls">
+            <input
+              id="task-input"
+              name="task"
+              type="text"
+              placeholder="Ex : Réviser le cours de mathématiques"
+              autocomplete="off"
+              required
+            />
+            <button type="submit">Ajouter</button>
+          </div>
+        </form>
+
+        <div class="task-toolbar" aria-live="polite">
+          <span class="task-toolbar__count">0 tâche</span>
+          <div class="task-toolbar__filters" role="tablist">
+            <button class="filter-btn is-active" type="button" data-filter="all" role="tab">
+              Toutes
+            </button>
+            <button class="filter-btn" type="button" data-filter="active" role="tab">
+              Actives
+            </button>
+            <button class="filter-btn" type="button" data-filter="done" role="tab">
+              Terminées
+            </button>
+          </div>
+          <button class="clear-btn" type="button">Tout supprimer</button>
+        </div>
+
+        <ul class="task-list" aria-label="Liste des tâches"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
